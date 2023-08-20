@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Data } from "../models";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
@@ -8,7 +8,7 @@ const Page1 = () => {
   const [adata, setAdata] = useState<Data[]>([]);
   const navigate = useNavigate();
 
-  const handleClick = ( e:React.MouseEvent<HTMLInputElement>) =>{
+  const handleClick = ( ) =>{
        navigate('/page2')
   }
 
@@ -34,7 +34,7 @@ const Page1 = () => {
       <div style={{ height: 700, width: "100%" }}>
         <DataGrid rows={adata} columns={columns} />
       </div>
-      <button className="btn" style={{ width: "10rem", marginTop: "5rem" }} onClick={(e)=>handleClick(e)}>
+      <button className="btn" style={{ width: "10rem", marginTop: "5rem" }} onClick={()=>handleClick()}>
         Next Page
       </button>
     </div>
